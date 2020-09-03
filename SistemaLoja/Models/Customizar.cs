@@ -1,15 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
 namespace SistemaLoja.Models
 {
-    public class Fornecedor
+    public class Customizar
     {
         [Key]
-        public int FornecedorId { get; set; }
+        public int CustomizarId { get; set; }
         [Required(ErrorMessage = "Precisa informar o {0}")]
         [StringLength(30, ErrorMessage = "Campo com limite de 1 a 30 caracteres")]
         public string Nome { get; set; }
@@ -23,7 +24,13 @@ namespace SistemaLoja.Models
         [Display(Name = "E-mail")]
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
+        public string Documento { get; set; }
 
-        public virtual ICollection<FornecedorProduto> FornecedorProduto { get; set; }
+
+        [Display(Name = "Tipo de documento")]
+        public int TipoDocumentoId { get; set; }
+
+
+        public virtual TipoDocumento TipoDocumento { get; set; }
     }
 }

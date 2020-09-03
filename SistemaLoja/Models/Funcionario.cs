@@ -28,17 +28,15 @@ namespace SistemaLoja.Models
         [Display(Name = "Comissão")]
         [DisplayFormat(DataFormatString = "{0:P1}", ApplyFormatInEditMode = false)]
         public decimal Comissao { get; set; }
-        
-        [Required(ErrorMessage = "Precisa informar a {0}")]
+
+        //[DataType(DataType.Date)]
         [Display(Name = "Data de Nascimento")]
         [DisplayFormat(DataFormatString ="{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
-        [DataType(DataType.Date)]
         public DateTime Nascimento { get; set; }
 
-        [Required(ErrorMessage = "Precisa informar a {0}")]
         [Display(Name = "Data de Cadastro")]
         [DisplayFormat(DataFormatString ="{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
-        [DataType(DataType.Date)]
+        //[DataType(DataType.Date)]
         public DateTime Cadastro { get; set; }
 
         [NotMapped]
